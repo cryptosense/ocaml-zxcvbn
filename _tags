@@ -1,0 +1,12 @@
+true: bin_annot
+true: debug
+true: safe_string
+
+<src>: include
+<vendor/*>: ccopt(-I vendor)
+
+<src/zxcvbn.{cma,cmxa}>: use_zxcvbn
+<src/zxcvbn.cmxs>: link_zxcvbn
+
+<test/*>: package(oUnit)
+<test/*>: use_zxcvbn
