@@ -5,7 +5,7 @@ let overall_score_suite =
     let real = Zxcvbn.matches password in
     let diff = (real /. score) -. 1. |> abs_float in
     if diff > 0.01 then
-      assert_failure @@ Printf.sprintf "Expected %f but got %.4f" score real
+      assert_failure @@ Printf.sprintf "Expected %.4f but got %.4f" score real
   in
   let (>:=) password score = password >:: test ~password ~score in
   [ "zxcvbn" >:= 5.83
