@@ -6,6 +6,8 @@ let headers = ["vendor/zxcvbn.h"; "vendor/dict-src.h"]
 let () =
   dispatch begin function
     | After_rules ->
+        pflag ["c"; "compile"] "ccopt" (fun param -> S [A "-ccopt"; A param]);
+        pflag ["c"; "link"] "ccopt" (fun param -> S [A "-ccopt"; A param]);
         flag ["library"; "link"; "byte"; "use_zxcvbn"]
           (S ([A "-dllib"; A "-lzxcvbn_stubs"]));
         flag ["library"; "link"; "native"; "use_zxcvbn"]
