@@ -2,4 +2,5 @@ B _build/src
 B _build/tests
 
 PKG oUnit
+PKG ppx_deriving.std
 PKG topkg

@@ -9,6 +9,7 @@ depends: [
   "ocamlbuild" {build}
   "ocamlfind" {build}
   "ounit" {test}
+  "ppx_deriving" {>= "4.0" & < "5.0"}
   "topkg" {build}
 ]
 available: [ocaml-version >= "4.02.0"]
