@@ -1,3 +1,5 @@
+(** Bindings to the zxcvbn password strength estimation library *)
+
 module Match : sig
   type typ =
     | Non_match
@@ -25,4 +27,5 @@ module Match : sig
   [@@deriving eq, ord, show]
 end
 
+(** Return the overall password entropy estimation and the list of match *)
 val matches : string -> float * Match.t list

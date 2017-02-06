@@ -5,6 +5,7 @@ homepage: "https://github.com/cryptosense/ocaml-zxcvbn"
 bug-reports: "https://github.com/cryptosense/ocaml-zxcvbn/issues"
 license: "BSD-2"
 dev-repo:  "https://github.com/cryptosense/ocaml-zxcvbn.git"
+doc: "https://cryptosense.github.io/ocaml-zxcvbn/doc"
 build: [
   [ "ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" ]
 ]
