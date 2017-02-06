@@ -66,13 +66,13 @@ module M = struct
   type t =
     { beginning: int
     ; length: int
-    ; typ: Zxcvbn.Match.typ
+    ; kind: Zxcvbn.Match.kind
     ; multipart: bool
     }
   [@@deriving eq,ord,show]
 
-  let of_zxcvbn_match { Zxcvbn.Match.beginning; length; typ; multipart } =
-    { beginning; length; typ; multipart }
+  let of_zxcvbn_match { Zxcvbn.Match.beginning; length; kind; multipart } =
+    { beginning; length; kind; multipart }
 end
 
 let matches_suite =
@@ -91,24 +91,24 @@ let matches_suite =
   let open Zxcvbn in
   [ "" >:=  test ~matches:[]
   ; "password" >:=
-    test ~matches:[M.{ beginning=0; length=8; typ=Match.Dictionnary_match; multipart=false }]
+    test ~matches:[M.{ beginning=0; length=8; kind=Match.Dictionnary_match; multipart=false }]
   ; "passw0rd" >:=
-    test ~matches:[M.{ beginning=0; length=8; typ=Match.Dict_leet_match; multipart=false }]
+    test ~matches:[M.{ beginning=0; length=8; kind=Match.Dict_leet_match; multipart=false }]
   ; "passwordpasswordpassword" >:=
-    test ~matches:[M.{ beginning=0; length=24; typ=Match.Dictionnary_match; multipart=true }]
+    test ~matches:[M.{ beginning=0; length=24; kind=Match.Dictionnary_match; multipart=true }]
   ; "jkl;'" >:=
-    test ~matches:[M.{ beginning=0; length=5; typ=Match.Spatial_match; multipart=false }]
+    test ~matches:[M.{ beginning=0; length=5; kind=Match.Spatial_match; multipart=false }]
   ; "defghij" >:=
-    test ~matches:[M.{ beginning=0; length=7; typ=Match.Sequence_match; multipart=false }]
+    test ~matches:[M.{ beginning=0; length=7; kind=Match.Sequence_match; multipart=false }]
   ; "01/02/2003" >:=
-    test ~matches:[M.{ beginning=0; length=10; typ=Match.Date_match; multipart=false }]
+    test ~matches:[M.{ beginning=0; length=10; kind=Match.Date_match; multipart=false }]
   ; "ccccccc" >:=
-    test ~matches:[M.{ beginning=0; length=7; typ=Match.Repeats_match; multipart=false }]
+    test ~matches:[M.{ beginning=0; length=7; kind=Match.Repeats_match; multipart=false }]
   ; "lgjt" >:=
-    test ~matches:[M.{ beginning=0; length=4; typ=Match.Brute_match; multipart=false }]
+    test ~matches:[M.{ beginning=0; length=4; kind=Match.Brute_match; multipart=false }]
   ; "password1234" >:=
-    test ~matches:[ M.{ beginning=0; length=8; typ=Match.Dictionnary_match; multipart=false }
-                  ; M.{ beginning=8; length=4; typ=Match.Dictionnary_match; multipart=false }
+    test ~matches:[ M.{ beginning=0; length=8; kind=Match.Dictionnary_match; multipart=false }
+                  ; M.{ beginning=8; length=4; kind=Match.Dictionnary_match; multipart=false }
                   ]
   ]
 

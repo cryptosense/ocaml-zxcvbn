@@ -1,7 +1,7 @@
 (** Bindings to the zxcvbn password strength estimation library *)
 
 module Match : sig
-  type typ =
+  type kind =
     | Non_match
     | Brute_match
     | Dictionnary_match
@@ -20,7 +20,7 @@ module Match : sig
     { beginning: int
     ; length: int
     ; entropy: float
-    ; typ: typ
+    ; kind: kind
     ; multipart: bool
     ; multipart_entropy: float
     }

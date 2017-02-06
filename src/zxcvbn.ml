@@ -1,5 +1,5 @@
 module Match = struct
-  type typ =
+  type kind =
     | Non_match
     | Brute_match
     | Dictionnary_match
@@ -18,7 +18,7 @@ module Match = struct
     { beginning: int
     ; length: int
     ; entropy: float
-    ; typ: typ
+    ; kind: kind
     ; multipart: bool
     ; multipart_entropy: float
     }
