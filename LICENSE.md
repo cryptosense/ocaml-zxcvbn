@@ -21,3 +21,8 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Sources of zxcvbn-c are embedded under the vendor/ directory. It has been
+fetched from https://github.com/tsyrogit/zxcvbn-c.git.
+It is copyright (c) 2015 Tony Evans and available under the BSD-3 license.
+Word lists come from various sources and are distributed under CC-BY-SA-3.0.
