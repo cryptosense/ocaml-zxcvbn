@@ -27,5 +27,8 @@ module Match : sig
   [@@deriving eq, ord, show]
 end
 
-(** Return the overall password entropy estimation and the list of match *)
+(** Return the overall password entropy estimation and the list of matches.
+    The underlying C function expects a null terminated string so keep in mind
+    that if the given string contains null chars, only the substring until the
+    first null char will be evaluated. *)
 val matches : string -> float * Match.t list
