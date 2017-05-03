@@ -22,6 +22,9 @@ Bindings to the zxcvbn password strength estimation library<br>
 
 <pre><span class="keyword">module</span> <a href="Zxcvbn.Match.html">Match</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Zxcvbn.Match.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="VALmatches"><span class="keyword">val</span> matches</span> : <code class="type">string -> float * <a href="Zxcvbn.Match.html#TYPEt">Match.t</a> list</code></pre><div class="info ">
-Return the overall password entropy estimation and the list of match<br>
+Return the overall password entropy estimation and the list of matches.
+    The underlying C function expects a null terminated string so keep in mind
+    that if the given string contains null chars, only the substring until the
+    first null char will be evaluated.<br>
 </div>
 </body></html>
