@@ -22793,6 +22793,7 @@ static const unsigned char ChildMap[13547*8] =
     0,  32, 1,  0,  35, 0,  33, 0,   0,  160,0,  0,  0,  16, 0,  0,   0,  36, 0,  0,  1,  16, 0,  2,   0,  0,  0,  0,  78, 58, 70, 0,   0,  32, 20, 0,  1,  0,  138,2,   
     0,  32, 8,  0,  0,  0,  136,2,   0,  32, 0,  0,  0,  0,  128,2  
 };
+#define CHARSET_SIZE 49
 #define NumLargeCounts 310
 static const unsigned char EndCountLge[310] =
 {
