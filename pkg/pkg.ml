@@ -7,4 +7,5 @@ let () =
   Ok [ Pkg.mllib "src/zxcvbn.mllib"
      ; Pkg.clib "src/libzxcvbn_stubs.clib"
      ; Pkg.test "test/test"
+     ; Pkg.test ~run:false "test/test_memory"
      ]
