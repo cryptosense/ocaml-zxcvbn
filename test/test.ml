@@ -3,7 +3,7 @@ open OUnit2
 let (>:=) password test = password >:: test ~password
 
 let overall_score_suite =
-  let test ~password ~score ctxt =
+  let test ~password ~score _ctxt =
     let (real, _) = Zxcvbn.matches password in
     let diff = (real /. score) -. 1. |> abs_float in
     if diff > 0.01 then
@@ -71,8 +71,8 @@ module M = struct
     }
   [@@deriving eq,ord,show]
 
-  let of_zxcvbn_match { Zxcvbn.Match.beginning; length; kind; multipart } =
-    { beginning; length; kind; multipart }
+  let of_zxcvbn_match {Zxcvbn.Match.beginning; length; kind; multipart; _} =
+    {beginning; length; kind; multipart}
 end
 
 let matches_suite =

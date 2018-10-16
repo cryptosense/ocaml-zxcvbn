@@ -1,4 +1,4 @@
-#include "../vendor/zxcvbn.h"
+#include "zxcvbn.h"
 
 #include <caml/alloc.h>
 #include <caml/memory.h>
