@@ -1,6 +1,7 @@
 (** See https://github.com/cryptosense/ocaml-zxcvbn/issues/4
-    Run `topkg build && valgrind ./_build/test/test_memory.native > /dev/null` to
-    detect memory corruption. *)
+    Run:
+    `dune build test/test_memory.exe && valgrind ./_build/default/test/test_memory.native > /dev/null`
+    to detect memory corruption. *)
 let test_issue_4 () =
   let random_char () = Char.chr (1 + Random.int 126) in
   let random_pass () = String.init 10 (fun _ -> random_char ()) in

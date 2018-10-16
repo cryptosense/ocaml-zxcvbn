@@ -7,18 +7,15 @@ license: "BSD-2"
 dev-repo:  "git+https://github.com/cryptosense/ocaml-zxcvbn.git"
 doc: "https://cryptosense.github.io/ocaml-zxcvbn/doc"
 build: [
-  [ "ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" ]
+  ["dune" "build" "-p" name "-j" jobs]
 ]
 run-test: [
-  [ "ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%" "--tests" "true" ]
-  [ "ocaml" "pkg/pkg.ml" "test" ]
+  ["dune" "runtest" "-p" name "-j" jobs]
 ]
 depends: [
+  "dune" {build & >= "1.4.0"}
   "ocaml" {>= "4.02.0"}
-  "ocamlbuild" {build}
-  "ocamlfind" {build}
   "ounit" {with-test}
   "ppx_deriving" {>= "4.0" & < "5.0"}
-  "topkg" {build}
 ]
 tags: ["org:cryptosense"]
