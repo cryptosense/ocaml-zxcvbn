@@ -19,3 +19,7 @@ depends: [
   "ppx_deriving" {>= "4.0" & < "5.0"}
 ]
 tags: ["org:cryptosense"]
+synopsis: "Bindings for the zxcvbn password strength estimation library"
+description: """
+This library provides functions to estimate the strength of a password.
+"""
