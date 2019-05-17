@@ -4,3 +4,7 @@
 
 Bindings to [zxcvbn-c](https://github.com/tsyrogit/zxcvbn-c), the C implementation of
 dropbox [zxcvbn](https://github.com/dropbox/zxcvbn) password strength estimation library.
+
+## Documentation
+
+API documentation is available [here](https://cryptosense.github.io/ocaml-zxcvbn/doc/)
