@@ -1,3 +1,18 @@
+v2.3+2
+------
+
+*2019-05-17*
+
+- Upgrade to `opam` 2
+- Move build to `dune`
+
+v2.3+1
+------
+
+*2017-08-16*
+
+- Upgrade to `zxcvbn-c` version 2.3
+
 v2.0+2
 ------
 
