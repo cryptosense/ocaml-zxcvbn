@@ -1,10 +1,8 @@
 language: c
 os: linux
 dist: xenial
-services:
-  - docker
-install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-docker.sh
-script: bash ./.travis-docker.sh
+install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh
+script: bash .travis-opam.sh
 env:
   global:
     - PACKAGE=zxcvbn
